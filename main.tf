@@ -1,6 +1,6 @@
 provider "google" {
 project = "project-322304"
-region = "us-west1"
+region = "us-west2"
 }
 
 resource "google_compute_instance" "myvm" {
