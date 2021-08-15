@@ -16,3 +16,4 @@ machine_type = "f1-micro"
 network_interface {
 network = "default"
 }
+}
