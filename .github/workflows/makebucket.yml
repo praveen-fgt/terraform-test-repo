@@ -17,15 +17,16 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
     steps:
       #- uses: actions/checkout@v2
-      - name: Create Bucket
-        uses: google-github-actions/setup-gcloud@master
+       uses: google-github-actions/setup-gcloud@master
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_CREDENTIALS }}
           export_default_credentials: true
 
-      - name: Create VM
-        run: gsutil ls
+      - name: Create Bucket
+        run: |
+          gsutil ls
+          gsutil mb gs://test-pra-bucket
